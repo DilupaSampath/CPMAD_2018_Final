@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-navbar style="  background-color: #049898;  box-shadow: -2px 9px 14px #0c0c0c;color:black">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Welcome to
+      <strong style="color: orange">  Smart Class</strong>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content no-bounce>
+  <ion-slides style="background-color: #30425a">
+
+
+
+
+    <!-- <p>Your dream house is just a few taps away! Select Properties in the menu to start your search.</p> -->
+
+
+    <ion-card style="height: 60px;box-shadow: 12px 13px 13px #352F48;position: absolute;    background-color: #F1F1F1;">
+      <!-- <button ion-button (click)="appoinmentPage()">Appoinments</button> -->
+      
+    </ion-card>
+    <ion-card class="table" style="box-shadow: 12px 13px 13px #352F48;    margin-top: 89px">
+      <ion-content *ngIf="userType=='Staff'" padding style="background-color: #ececec">
+        <ion-grid text-center style="margin: 3;">
+          <ion-row wrap style="margin: -16px;">
+            <ion-col style="background-color: transparent;" *ngFor="let item of managements" width-70 >
+              <ion-img style="width: 106px;
+              height: 100px" [src]="item.url" (click)="openPage(item.name)"></ion-img>
+              <strong>
+                <p style="color: orange"> {{item.name}}</p>
+              </strong>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-content>
+
+
+
+
+    </ion-card>
+    <!-- <button ion-button (tap)="addNote()"></button> -->
+  </ion-slides>
+</ion-content>

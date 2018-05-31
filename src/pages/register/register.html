@@ -1,0 +1,44 @@
+<!--
+  Generated template for the RegisterPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>Register</ion-title>
+
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding style="background-color: #30425a;height: 558px;">
+
+  <ion-item style="background-color:transparent; ">
+        <ion-label><strong>{{userType}}</strong></ion-label>
+        <ion-toggle [(ngModel)]="togglestate" (ngModelChange)="changeUserTpe()" ></ion-toggle>
+    </ion-item>
+  <ion-item style="background-color:transparent; ">
+    <ion-label>Email Address</ion-label>
+    <ion-input  type="text" [(ngModel)]="user.email"></ion-input>
+  </ion-item>
+  <ion-item style="background-color:transparent; ">
+    <ion-label>Password</ion-label>
+    <ion-input type="password" [(ngModel)]="user.password"></ion-input>
+  </ion-item>
+
+  <ion-item [hidden]="IsStateChange" style="background-color:transparent; ">
+    <ion-label>Name</ion-label>
+    <ion-input type="text" [(ngModel)]="user.name"></ion-input>
+  </ion-item>  
+  <ion-item [hidden]="IsStateChange" style="background-color:transparent; ">
+    <ion-label>Subject</ion-label>
+    <ion-input type="text" [(ngModel)]="user.address"></ion-input>
+  </ion-item>
+  <ion-item [hidden]="IsStateChange" style="background-color:transparent; ">
+    <ion-label>Phone number</ion-label>
+    <ion-input type="text" [(ngModel)]="user.phonenumber"></ion-input>
+  </ion-item>
+  <button style="    background-color: #049898;    margin-left: 47px;width: 268px;" ion-button (click)="register(user)">Register</button>
+  
+</ion-content>Android 

@@ -1,0 +1,56 @@
+page-welcome {
+  .select-md {
+    padding: 0px 8px 13px 16px;
+}
+ion-select{
+  background-color: aqua;
+  max-width: 70%;
+  border-radius: 29px;
+  height: 31px;
+  margin-top: 5px;
+}  
+      font-weight: 300;
+    
+      ion-slide {
+    
+        position: relative;
+        background-size: cover;
+    
+        p {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0; 
+          
+          padding: 28px 28px 48px 28px;
+          font-size: 2.7rem;
+          margin-bottom: 0;
+        }
+    
+      }
+    
+      .swiper-pagination-bullet {
+        background: white;
+      }
+    
+    }
+    
+    .card-md {
+      margin: 10px -20px 24px 10px;
+      width: calc(100% - 20px);
+      border-radius: 6px;
+      font-size: 1.4rem;
+      background: #fff;
+    }
+    .table {
+      padding: 10px;
+    }
+    .card-ios p {
+      color: #ff8300;
+  }.col{
+    background-color: #ffffffe6;
+  }
+  .img-loaded:hover{
+    background-color: #049898;
+  }
+  

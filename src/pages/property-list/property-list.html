@@ -1,0 +1,75 @@
+<ion-header>
+
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-searchbar [(ngModel)]="searchKey" (ionInput)="onInput($event)"
+                       (ionCancel)="onCancel($event)"></ion-searchbar>
+    </ion-navbar>
+</ion-header>
+
+<ion-content class="property-list" style="background-color: #30425A">
+
+    <ion-list *ngIf="viewMode==='list'">
+
+        <ion-item-sliding *ngFor="let property of properties">
+            <button ion-item  style="background-color: #3c334847;   " (click)= "allocation(property)">
+                <ion-thumbnail item-left>
+                    <img src="{{property.picture}}"/>
+                </ion-thumbnail>
+               <strong><h2  style="color: #30425A">{{property.name}}</h2></strong> 
+                <p> Batch :{{property.batch}}</p>
+                <p> Current Year : {{property.currentYear}}</p>
+                <button ion-button style="color: white" (click)= "allocation(property)">Allocation</button>
+            </button>
+            <ion-item-options>
+                <button danger (click)="deleteItem(property)">Delete</button>
+            </ion-item-options>
+        </ion-item-sliding>
+
+    </ion-list>
+
+    <div *ngIf="viewMode==='map'" style="width:100%;height:100%;" id="map">
+      <ion-item style="background-color:transparent; ">
+        <ion-label>Email Address</ion-label>
+        <ion-input  type="text" [(ngModel)]="email"></ion-input>
+      </ion-item>
+      <ion-item style="background-color:transparent; ">
+        <ion-label>Name</ion-label>
+        <ion-input type="password" [(ngModel)]="name"></ion-input>
+      </ion-item>
+    
+      <ion-item style="background-color:transparent; ">
+        <ion-label>Mobile</ion-label>
+        <ion-input type="text" [(ngModel)]="phonenumber"></ion-input>
+      </ion-item>  
+      <ion-item  style="background-color:transparent; ">
+        <ion-label>Course</ion-label>
+        <ion-input type="text" [(ngModel)]="course"></ion-input>
+      </ion-item>
+      <ion-item  style="background-color:transparent; ">
+        <ion-label>Batch</ion-label>
+        <ion-input type="text" [(ngModel)]="batch"></ion-input>
+      </ion-item>
+      <ion-item  style="background-color:transparent; ">
+        <ion-label>Year</ion-label>
+        <ion-input type="text" [(ngModel)]="currnetYear"></ion-input>
+      </ion-item>
+      
+      <button style="    background-color: #049898;    margin-left: 47px;width: 268px;" ion-button (click)="register()">Register</button>
+      
+    </div>
+
+</ion-content>
+
+<ion-footer padding>
+    <ion-segment [(ngModel)]="viewMode">
+        <ion-segment-button value="list">
+            <ion-icon name="list"></ion-icon>
+        </ion-segment-button>
+        <ion-segment-button value="map" (ionSelect)="showMap()">
+            <ion-icon name="map"></ion-icon>
+        </ion-segment-button>
+    </ion-segment>
+</ion-footer>

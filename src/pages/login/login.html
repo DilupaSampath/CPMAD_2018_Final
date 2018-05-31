@@ -1,0 +1,28 @@
+ 
+  
+  <ion-content padding style="background-color: #30425a" >
+    <!-- <img style="height: 101px;margin-left: 114px;" src="https://vignette.wikia.nocookie.net/central/images/e/e4/Hands.png/revision/latest?cb=20160226003347" > -->
+      <div style=" padding-left: 101px;padding-top: 53px;">
+          <h1><strong style="color: orange;   "> Smart Class</strong></h1>  
+          <p style="color: #bfd0d6;">smart class</p>
+        </div>
+      <div style="padding-top: 8px;margin-left: -6px;">
+    <ion-item style="background-color:transparent;    margin-left:11px ;width: 311px;">
+        <ion-label ><strong style="color:white ; padding-left: 91px;">Login as {{userType}}</strong></ion-label>
+        <ion-toggle [(ngModel)]="togglestate" (ngModelChange)="changeUserTpe()" ></ion-toggle>
+    </ion-item>
+  <ion-item style="background-color:transparent;width: 311px;margin-left: 11px;">
+    <ion-label><ion-icon style="color: white" name="md-person"></ion-icon></ion-label>
+    <ion-input style="color: white" type="text" [(ngModel)]="user.email"></ion-input>
+  </ion-item>
+  <ion-item style="background-color:transparent;width: 311px;margin-left: 11px;">
+    <ion-label><ion-icon style="color: white" name="md-lock"></ion-icon></ion-label>
+    <ion-input style="color: white" type="password" [(ngModel)]="user.password"></ion-input>
+  </ion-item>
+  <div style="background-color:transparent;    margin-top: 34px;">
+  <button ion-button (click)="login(user)" style="     width: 298px;margin-left: 24px;   background-color: #049898">Login</button>
+  <button ion-button (click)="register()" style="     width: 298px; margin-left: 24px;  background-color: #049898">Register</button>
+  </div>
+</div>
+  </ion-content>
+  
